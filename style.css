@@ -1,0 +1,481 @@
+/* =============================================
+   Kişisel Web Sayfası — Harici CSS Dosyası
+   Hazırlayan : Ahmet Yılmaz
+   Tarih       : 16.04.2026
+   ============================================= */
+
+/* ===== GENEL SIFIRLAMALAR ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS renk ve yazı tipi değişkenleri */
+:root {
+  --lacivert: #0f172a;
+  --kart-bg: #1e293b;
+  --vurgu: #38bdf8;
+  --vurgu-koyu: #0284c7;
+  --metin: #cbd5e1;
+  --metin-acik: #94a3b8;
+  --beyaz: #f1f5f9;
+  --rozet-bg: rgba(56, 189, 248, 0.12);
+  --golge: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --font-baslik: 'Playfair Display', serif;
+  --font-govde: 'Nunito', sans-serif;
+}
+
+/* ===== SAYFA ARKAPLAN ===== */
+body {
+  background-color: var(--lacivert);
+  font-family: var(--font-govde);
+  color: var(--metin);
+  min-height: 100vh;
+  /* Arka plan dekoratif deseni */
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(99,102,241,0.07) 0%, transparent 60%);
+}
+
+/* ===== HERO BÖLÜMÜ ===== */
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 60px 20px 50px;
+  text-align: center;
+}
+
+/* Hero iç kapsayıcı */
+.hero-ic {
+  max-width: 700px;
+  margin: 0 auto;
+  /* Hafif yukarıdan kayarak belirme animasyonu */
+  animation: asagidan 0.7s ease both;
+}
+
+/* Profil fotoğrafı çerçevesi */
+.avatar-cerceve {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--vurgu);
+  padding: 4px;
+  margin: 0 auto 20px;
+  background: var(--kart-bg);
+  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.1);
+}
+
+/* Profil fotoğrafı */
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ana başlık (h1) */
+h1 {
+  font-family: var(--font-baslik);
+  font-size: 2.6em;
+  color: var(--beyaz);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Hero alt yazısı */
+.hero-alt {
+  font-size: 1em;
+  color: var(--metin-acik);
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+/* Rozet grubu */
+.rozet-grup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Tek rozet */
+.rozet {
+  background-color: var(--rozet-bg);
+  color: var(--vurgu);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: background-color 0.25s, transform 0.25s;
+}
+
+/* Rozet hover efekti */
+.rozet:hover {
+  background-color: rgba(56, 189, 248, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ===== ANA İÇERİK ===== */
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ===== KART BİLEŞENİ ===== */
+.kart {
+  background-color: var(--kart-bg);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: var(--golge);
+  /* Her kart hafifçe kayarak belirsin */
+  animation: asagidan 0.6s ease both;
+}
+
+/* Kart başlıkları (h2) */
+h2 {
+  font-family: var(--font-baslik);
+  font-size: 1.5em;
+  color: var(--beyaz);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Emoji ikonu */
+.ikon {
+  font-size: 1.1em;
+}
+
+/* Alt başlıklar (h3) */
+h3 {
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--vurgu);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Paragraflar */
+p {
+  font-size: 0.97em;
+  line-height: 1.8;
+  color: var(--metin);
+  margin-bottom: 12px;
+}
+
+/* ===== İKİ KOLONLU DÜZEN ===== */
+.iki-kolon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* ===== LİSTELER ===== */
+.ozel-liste {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Sırasız liste öğesi */
+.ozel-liste li {
+  background-color: rgba(56, 189, 248, 0.06);
+  border-left: 3px solid var(--vurgu);
+  padding: 8px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.93em;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Liste öğesi hover */
+.ozel-liste li:hover {
+  background-color: rgba(56, 189, 248, 0.12);
+  transform: translateX(4px);
+}
+
+/* Sıralı liste numaraları */
+ol.ozel-liste {
+  counter-reset: liste-sayac;
+}
+
+ol.ozel-liste li {
+  counter-increment: liste-sayac;
+  border-left-color: #818cf8;
+}
+
+ol.ozel-liste li::before {
+  content: counter(liste-sayac) ".";
+  font-weight: 800;
+  color: #818cf8;
+  margin-right: 8px;
+}
+
+/* ===== TABLO ===== */
+.tablo-sarici {
+  overflow-x: auto; /* Küçük ekranlarda yatay kaydırma */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+
+/* Tablo başlık satırı rengi ve yazı tipi */
+thead tr {
+  background: linear-gradient(90deg, var(--vurgu-koyu), #4f46e5);
+}
+
+th {
+  padding: 12px 14px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+td {
+  padding: 10px 14px;
+  text-align: center;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  transition: background-color 0.2s;
+}
+
+/* Satır hizalama — zebra */
+tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Satır üzerine gelindiğinde */
+tbody tr:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+/* Saat sütunu hizalaması */
+td.saat {
+  font-weight: 700;
+  color: var(--vurgu);
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Öne çıkarılan ders hücresi */
+td.vurgu {
+  color: #a5f3fc;
+  font-weight: 700;
+}
+
+/* ===== HEDEF GRID ===== */
+.hedef-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+/* Tek hedef kutusu */
+.hedef-kutu {
+  background-color: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+/* Hedef kutusu hover */
+.hedef-kutu:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Hedef numarası */
+.hedef-no {
+  display: block;
+  font-size: 2em;
+  font-weight: 800;
+  color: rgba(56, 189, 248, 0.3);
+  line-height: 1;
+  margin-bottom: 8px;
+  font-family: var(--font-baslik);
+}
+
+.hedef-kutu p {
+  font-size: 0.9em;
+  margin-bottom: 0;
+  color: var(--metin);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 36px 20px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.footer-ad {
+  font-family: var(--font-baslik);
+  font-size: 1.2em;
+  color: var(--beyaz);
+  margin-bottom: 6px;
+}
+
+.footer-alt {
+  font-size: 0.82em;
+  color: var(--metin-acik);
+}
+
+/* ===== ANİMASYON ===== */
+@keyframes asagidan {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== KÜÇÜK EKRAN UYUMU ===== */
+@media (max-width: 600px) {
+  h1 { font-size: 1.9em; }
+  .kart { padding: 22px 18px; }
+  .iki-kolon { grid-template-columns: 1fr; }
+  .hedef-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== İLETİŞİM FORMU ===== */
+.iletisim-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* Tek form grubu */
+.form-grup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* İki kolonu tam kaplayan alan (textarea) */
+.form-grup.tam-genislik {
+  grid-column: 1 / -1;
+}
+
+/* Etiket */
+.form-grup label {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--vurgu);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Input ve textarea ortak stil */
+.form-grup input,
+.form-grup textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-family: var(--font-govde);
+  font-size: 0.93em;
+  color: var(--beyaz);
+  outline: none;
+  transition: border-color 0.25s, background-color 0.25s;
+  resize: vertical;
+}
+
+/* Odaklanma efekti */
+.form-grup input:focus,
+.form-grup textarea:focus {
+  border-color: var(--vurgu);
+  background-color: rgba(56, 189, 248, 0.07);
+}
+
+/* Placeholder rengi */
+.form-grup input::placeholder,
+.form-grup textarea::placeholder {
+  color: var(--metin-acik);
+}
+
+/* Buton grubu */
+.buton-grup {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+}
+
+/* Gönder butonu */
+.btn-gonder {
+  background: linear-gradient(135deg, var(--vurgu-koyu), #4f46e5);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  font-family: var(--font-govde);
+  font-size: 0.95em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-gonder:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+/* Temizle butonu */
+.btn-temizle {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--metin-acik);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-family: var(--font-govde);
+  font-size: 0.95em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-temizle:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Küçük ekranda form tek kolon */
+@media (max-width: 600px) {
+  .iletisim-form {
+    grid-template-columns: 1fr;
+  }
+  .form-grup.tam-genislik {
+    grid-column: 1;
+  }
+  .buton-grup {
+    grid-column: 1;
+  }
+}
